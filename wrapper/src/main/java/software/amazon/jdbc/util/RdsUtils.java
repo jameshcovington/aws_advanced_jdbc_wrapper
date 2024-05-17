@@ -232,8 +232,8 @@ public class RdsUtils {
     if (chinaMatcher.find()) {
       return host.replaceAll(AURORA_CHINA_CLUSTER_PATTERN.pattern(), "${instance}.cluster-${domain}");
     }
-    final Matcher matcher = AURORA_SC2S_CLUSTER_PATTERN.matcher(host);
-    if (matcher.find()) {
+    final Matcher sc2sMatcher = AURORA_SC2S_CLUSTER_PATTERN.matcher(host);
+    if (sc2sMatcher.find()) {
       return host.replaceAll(AURORA_SC2S_CLUSTER_PATTERN.pattern(), "${instance}.cluster-${domain}");
     }
     return null;

@@ -50,6 +50,10 @@ project(":vertxexample").projectDir = file("examples/VertxExample")
 project(":readwritesample").projectDir = file("examples/ReadWriteSplittingSample")
 
 pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
     plugins {
         fun String.v() = extra["$this.version"].toString()
         fun PluginDependenciesSpec.idv(id: String, key: String = id) = id(id) version key.v()
